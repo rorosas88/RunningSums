@@ -3,32 +3,31 @@
 
 #include <iostream>
 #include <vector>
+
 std::vector<int> runningSum(std::vector<int>& nums)
 {
-    return { 0 };
+    int nRunningSum = 0; 
+    std::vector<int> returnvalue{0};
+    for (int i = 0; i < nums.size(); i++) 
+    {
+        nRunningSum = nRunningSum + nums[i];
+        returnvalue[i] = nRunningSum;
+    }
+
+    return { returnvalue };
 }
 
 int main()
 {
     //enter input into nums
-    std::vector<int>& input = new std::vector<int> {0, 0, 0, 0, 0};
+    std::vector<int> input{ 1,2,3,4 };
 
-    std::vector<int>& output =  std::vector<int> { 1,2,3,4,5,6 };
+    std::vector<int> output{ 0 };
 
-    output = runningSum(input);
+   output = runningSum(input);
 
-    for (int i = 0; i < output.size(); i++) {
+    for (int i = 0; i < output.size(); i++) 
+    {
         std::cout << output[i] << "\n";
     }
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
