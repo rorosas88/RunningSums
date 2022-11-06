@@ -7,7 +7,7 @@
 std::vector<int> runningSum(std::vector<int>& nums)
 {
     int nRunningSum = 0; 
-    std::vector<int> returnvalue{0};
+    std::vector<int> returnvalue(nums.size());
     for (int i = 0; i < nums.size(); i++) 
     {
         nRunningSum = nRunningSum + nums[i];
@@ -20,7 +20,7 @@ std::vector<int> runningSum(std::vector<int>& nums)
 int main()
 {
     //enter input into nums
-    std::vector<int> input{ 1,2,3,4 };
+    std::vector<int> input{ 1,1,1,1,1 };
 
     std::vector<int> output{ 0 };
 
